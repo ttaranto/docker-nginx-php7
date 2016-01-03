@@ -24,7 +24,3 @@ sed -i "/^listen.mode = .*/alisten.group = www-data" /etc/php/7.0/fpm/pool.d/www
 mkdir -p /var/run/php
 mkdir -p /var/run/php7.0-fpm && chown -R www-data:www-data /var/run/php7.0-fpm
 mkdir -p /var/log/php7.0-fpm && chown -R www-data:www-data /var/log/php7.0-fpm
-
-# install php composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer

@@ -28,6 +28,10 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nginx-full
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
 
+# install php composer
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
 ## add build script (also set timezone to Americas/Sao_Paulo)
 RUN mkdir -p /root/setup
 ADD build/setup.sh /root/setup/setup.sh
