@@ -34,7 +34,7 @@ The following folder is specified as the default root web folder:
 Note that the ``/var/www/public`` is the root folder for serving PHP files for your web server.
 
 ### Build Folder (within repo)
-Contains nginx config files as well as php-fpm settings. Also include setup.sh file that offloads tasks from the Dockerfile to reduce layers.
+Contains nginx config files as well as php-fpm configs (setup.sh). Also include setup.sh file that offloads tasks from the Dockerfile to reduce layers.
 
 ### Databases
 This image supports mysql.

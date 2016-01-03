@@ -12,7 +12,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 CMD ["/sbin/my_init"]
 
-# nginx-php Installation
+# nginx-php installation
 RUN add-apt-repository -y ppa:ondrej/php-7.0
 RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php-7.0
@@ -25,8 +25,8 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install php7.0-mysql php7.0-mcry
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nginx-full
 
 # install latest version of nodejs
-#RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
-#RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
 
 ## add build script (also set timezone to Americas/Sao_Paulo)
 RUN mkdir -p /root/setup
