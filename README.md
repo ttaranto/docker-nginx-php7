@@ -5,7 +5,7 @@
 </p>
 -----
 # docker-nginx-php7
-A Nginx + PHP 7.0 (FPM) base container. Builds upon on the excellent [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) container. You can find the docker automated build [here](https://registry.hub.docker.com/u/ttaranto/docker-nginx-php7/).
+A Nginx + PHP 7.0 (FPM) base container. Builds upon on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) container. You can find the docker automated build [here](https://registry.hub.docker.com/u/ttaranto/docker-nginx-php7/).
 
 
 ### Timezone
@@ -16,6 +16,7 @@ All services are defined and managed using the phusion/baseimage methodology. Lo
 
 * Nginx (lastest)
 * PHP-FPM (7.0)
+* Composer (PHP)
 * Node.JS (lastest)
 * XTERM environment support w/colors
 
