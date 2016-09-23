@@ -5,8 +5,9 @@
 </p>
 -----
 # docker-nginx-php7
-A Nginx + PHP 7.0 (FPM) base container. Builds upon on the [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) container. You can find the docker automated build [here](https://registry.hub.docker.com/u/ttaranto/docker-nginx-php7/).
+A Nginx + PHP 7.0 (FPM) base container. Builds upon on the Ubuntu 16.04 LTS unsing [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) container. You can find the docker automated build [here](https://registry.hub.docker.com/u/ttaranto/docker-nginx-php7/).
 
+[![](https://images.microbadger.com/badges/image/ttaranto/docker-nginx-php7.svg)](https://microbadger.com/images/ttaranto/docker-nginx-php7 "Get your own image badge on microbadger.com")
 
 ### Timezone
 The machine is configured to user America/Sao_Paulo timezone. The Nginx configuration is ready to run a [Laravel](https://laravel.com/) app.
@@ -15,7 +16,7 @@ The machine is configured to user America/Sao_Paulo timezone. The Nginx configur
 All services are defined and managed using the phusion/baseimage methodology. Logs are output using syslog and can be accessed using ``docker logs {container}``.
 
 * Nginx (lastest)
-* PHP-FPM (7.0)
+* PHP-FPM (7.0) (with Xdebug)
 * Composer (PHP)
 * Node.JS (lastest)
 * XTERM environment support w/colors
