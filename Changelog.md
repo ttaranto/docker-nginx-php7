@@ -1,3 +1,7 @@
+## 0.1.2 (release date: 2016-09-27)
+
+ * Added php7.0-zip
+
 ## 0.1.1 (release date: 2016-09-22)
 
  * Update to Ubuntu 16.0.4 LTS
