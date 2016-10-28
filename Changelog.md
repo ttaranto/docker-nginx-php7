@@ -1,3 +1,7 @@
+## 0.1.3 (release date: 2016-10-13)
+
+ * Added php7.0-soap
+
 ## 0.1.2 (release date: 2016-09-27)
 
  * Added php7.0-zip
