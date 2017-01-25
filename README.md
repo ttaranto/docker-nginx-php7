@@ -9,9 +9,6 @@ A Nginx + PHP 7.0 (FPM) base container. Builds upon on the Ubuntu 16.04 LTS unsi
 
 [![](https://images.microbadger.com/badges/image/ttaranto/docker-nginx-php7.svg)](https://microbadger.com/images/ttaranto/docker-nginx-php7 "Get your own image badge on microbadger.com")
 
-### Timezone
-The machine is configured to user America/Sao_Paulo timezone. The Nginx configuration is ready to run a [Laravel](https://laravel.com/) app.
-
 ### Services
 All services are defined and managed using the phusion/baseimage methodology. Logs are output using syslog and can be accessed using ``docker logs {container}``.
 
@@ -35,8 +32,29 @@ The following folder is specified as the default root web folder:
 
 Note that the ``/var/www/public`` is the root folder for serving PHP files for your web server.
 
+### Example
+``docker run -p 3306:3306 --name my_mysql -e MYSQL_ROOT_PASSWORD=mypassword -d mysql``
+
+This will create a my_mysql image based on official mysql docker image.
+
+``docker run -p 80:80 -p 9000:9000 --name my_laravel -v ~/dev/laravel:/var/www --link my_mysql:mysqldb -d ttaranto/docker-nginx-php7``
+
+This will create a docker image with name `my_laravel` linked to the MySQL container (my_mysql). Configue Laravel to connect to `mysqldb` host on .env file to access the database.
+
+Now you can access your project on browser http://localhost
+
+In the future to start the project again run:
+
+``docker start my_mysql my_laravel ``
+
+To stop just run:
+``docker stop my_laravel my_mysql``
+
 ### Build Folder (within repo)
-Contains nginx config files as well as php-fpm configs (setup.sh). Also include setup.sh file that offloads tasks from the Dockerfile to reduce layers.
+Contains nginx config files (nginx.conf) as well the scripts to configure php-fpm nginx, also include setup.sh file that offloads tasks from the Dockerfile to reduce layers.
 
 ### Databases
-This image supports mysql.
+This image supports [MySQL](https://hub.docker.com/_/mysql/) or [MariaDB](https://hub.docker.com/_/mariadb/).
+
+### Timezone
+The machine is configured to user America/Sao_Paulo timezone. The Nginx configuration is ready to run a [Laravel](https://laravel.com/) app.
