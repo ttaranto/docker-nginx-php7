@@ -1,8 +1,12 @@
-## 0.1.4 (release date: 2017-10-25)
+## 0.1.5 (release date: 2017-02-26)
+
+ * Added php7.0-pgsql
+
+## 0.1.4 (release date: 2017-01-25)
 
  * Added php7.0-xml and php7.0-imap
 
-## 0.1.3 (release date: 2016-10-13)
+## 0.1.3 (release date: 2016-01-13)
 
  * Added php7.0-soap
 

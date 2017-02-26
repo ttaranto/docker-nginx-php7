@@ -33,9 +33,10 @@ The following folder is specified as the default root web folder:
 Note that the ``/var/www/public`` is the root folder for serving PHP files for your web server.
 
 ### Example
-``docker run -p 3306:3306 --name my_mysql -e MYSQL_ROOT_PASSWORD=mypassword -d mysql``
+``$ docker run -p 3306:3306 --name my_mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql``
+``$ docker run -p 3306:3306 --name my_postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres``
 
-This will create a my_mysql image based on official mysql docker image.
+This will create a my_mysql or my_postgres image based on official mysql or postgres docker image.
 
 ``docker run -p 80:80 -p 9000:9000 --name my_laravel -v ~/dev/laravel:/var/www --link my_mysql:mysqldb -d ttaranto/docker-nginx-php7``
 
@@ -45,7 +46,7 @@ Now you can access your project on browser http://localhost
 
 In the future to start the project again run:
 
-``docker start my_mysql my_laravel ``
+``docker start my_mysql my_laravel``
 
 To stop just run:
 ``docker stop my_laravel my_mysql``
@@ -54,7 +55,7 @@ To stop just run:
 Contains nginx config files (nginx.conf) as well the scripts to configure php-fpm nginx, also include setup.sh file that offloads tasks from the Dockerfile to reduce layers.
 
 ### Databases
-This image supports [MySQL](https://hub.docker.com/_/mysql/) or [MariaDB](https://hub.docker.com/_/mariadb/).
+This image supports [PostgreSQL](https://hub.docker.com/_/postgres/) and [MySQL](https://hub.docker.com/_/mysql/) and/or [MariaDB](https://hub.docker.com/_/mariadb/).
 
 ### Timezone
 The machine is configured to user America/Sao_Paulo timezone. The Nginx configuration is ready to run a [Laravel](https://laravel.com/) app.
