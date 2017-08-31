@@ -7,7 +7,7 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # change resolv.conf
-#RUN echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+RUN echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
 
 # setup
 ENV HOME /root
@@ -29,6 +29,11 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nginx-full
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y git
+
+# install yarn
+RUN DEBIAN_FRONTEND="noninteractive" curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN DEBIAN_FRONTEND="noninteractive" echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install yarn
 
 # install php composer
 RUN curl -sS https://getcomposer.org/installer | php
